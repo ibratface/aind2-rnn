@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>RNN_project</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>RNN_project</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +13,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,6 +1109,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2535,6 +2538,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8755,9 +8760,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,14 +8962,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8990,16 +8986,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9136,9 +9122,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9228,9 +9211,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9275,9 +9255,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9574,7 +9551,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9595,6 +9571,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11265,7 +11246,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11577,7 +11558,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11591,9 +11571,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11654,10 +11631,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11643,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11826,7 +11799,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Load in necessary libraries for data input and normalization</span>
@@ -11855,7 +11828,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># lets take a look at our time series</span>
@@ -11872,20 +11845,16 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[12]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7f952d4462b0&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7ff6bf3809b0&gt;</pre>
 </div>
 
 </div>
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -12267,7 +12236,7 @@ UrigmJlZKVxQzMysFC4oZmZWiv8D0ajmVqfhrowAAAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="1.2--Cutting-our-time-series-into-sequences">1.2  Cutting our time series into sequences<a class="anchor-link" href="#1.2--Cutting-our-time-series-into-sequences">&#182;</a></h2><p>Remember, our time series is a sequence of numbers that we can represent in general mathematically as</p>
 $$s_{0},s_{1},s_{2},...,s_{P}$$<p>where $s_{p}$ is the numerical value of the time series at time period $p$ and where $P$ is the total length of the series.  In order to apply our RNN we treat the time series prediction problem as a regression problem, and so need to use a sliding window to construct a set of associated input/output pairs to regress on.  This process is animated in the gif below.</p>
-<p><img src="images/timeseries_windowing_training.gif" width=600 height=600/></p>
+<p>&lt;img src="images/timeseries_windowing_training.gif" width=600 height=600/&gt;</p>
 <p>For example - using a window of size T = 5 (as illustrated in the gif above) we produce a set of input/output pairs like the one shown in the table below</p>
 $$\begin{array}{c|c}
 \text{Input} & \text{Output}\\
@@ -12295,7 +12264,7 @@ $$\begin{array}{c|c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: fill out the function below that transforms the input series and window-size into a set of input/output pairs for use with our RNN model</span>
@@ -12334,7 +12303,7 @@ $$\begin{array}{c|c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">odd_nums</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">])</span>
@@ -12357,7 +12326,7 @@ $$\begin{array}{c|c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># run a window of size 2 over the odd number sequence and display the results</span>
@@ -12385,9 +12354,7 @@ $$\begin{array}{c|c}
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>--- the input X will look like ----
 [[ 1  3]
@@ -12437,7 +12404,7 @@ the type of y is &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># window the data using your windowing function</span>
@@ -12464,7 +12431,7 @@ the type of y is &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># split our dataset into training / testing sets</span>
@@ -12508,7 +12475,7 @@ the type of y is &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: create required RNN model</span>
@@ -12529,7 +12496,7 @@ the type of y is &lt;class &#39;numpy.ndarray&#39;&gt;
     <span class="p">])</span>
 
     <span class="c1"># build model using keras documentation recommended optimizer initialization</span>
-    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">RMSprop</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-08</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">RMSprop</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">08</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
 
     <span class="c1"># compile the model</span>
     <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">)</span>
@@ -12540,6 +12507,20 @@ the type of y is &lt;class &#39;numpy.ndarray&#39;&gt;
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Using TensorFlow backend.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12556,7 +12537,7 @@ the type of y is &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># run your model!</span>
@@ -12571,13 +12552,11 @@ the type of y is &lt;class &#39;numpy.ndarray&#39;&gt;
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[23]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;keras.callbacks.History at 0x7f952c504f98&gt;</pre>
+<pre>&lt;keras.callbacks.History at 0x7ff68a296dd8&gt;</pre>
 </div>
 
 </div>
@@ -12598,7 +12577,7 @@ the type of y is &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># generate predictions for training</span>
@@ -12628,7 +12607,7 @@ the type of y is &lt;class &#39;numpy.ndarray&#39;&gt;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># print out training and testing errors</span>
@@ -12647,12 +12626,10 @@ the type of y is &lt;class &#39;numpy.ndarray&#39;&gt;
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>training error = 0.0160044280981
-testing error = 0.0139837288623
+<pre>training error = 0.0160044316541
+testing error = 0.0139837335405
 </pre>
 </div>
 </div>
@@ -12673,7 +12650,7 @@ testing error = 0.0139837288623
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Plot everything - the original series as well as predictions on training and testing sets</span>
@@ -12705,9 +12682,7 @@ testing error = 0.0139837288623
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -13287,7 +13262,7 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># read in the text, transforming everything to lower case</span>
@@ -13303,9 +13278,7 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>our original text has 581864 characters
 </pre>
@@ -13328,7 +13301,7 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### print out the first 1000 characters of the raw text to get a sense of what we need to throw out</span>
@@ -13343,9 +13316,7 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[28]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[39]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -13371,7 +13342,7 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### find and replace &#39;\n&#39; and &#39;\r&#39; symbols - replacing them </span>
@@ -13397,7 +13368,7 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### print out the first 1000 characters of the raw text to get a sense of what we need to throw out</span>
@@ -13412,9 +13383,7 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[30]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[41]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -13441,22 +13410,25 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: list all unique characters in the text and remove any non-english ones</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_uniques</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">uniques</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span> <span class="n">uniques</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">uniques</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">uniques</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">uniques</span>
+
+<span class="c1">### TODO: list all unique characters in the text and remove any non-english ones</span>
 <span class="k">def</span> <span class="nf">clean_text</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
     <span class="c1"># find all unique characters in the text</span>
-    <span class="n">uniques</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-        <span class="n">uniques</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="n">uniques</span><span class="p">)</span>
+    <span class="n">uniques</span> <span class="o">=</span> <span class="n">get_uniques</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
     <span class="c1"># remove as many non-english characters and character sequences as you can </span>
     <span class="n">alphas</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">chr</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">]</span>
-    <span class="n">digits</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">chr</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;9&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">]</span>
-    <span class="n">puncts</span> <span class="o">=</span> <span class="s2">&quot;&#39;-,.? &amp;</span><span class="se">\&quot;</span><span class="s2">/%$!:();&quot;</span>
-    <span class="n">noneng</span> <span class="o">=</span> <span class="n">uniques</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">alphas</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">puncts</span><span class="p">)</span>
+<span class="c1">#     digits = [ chr(c) for c in range(ord(&#39;0&#39;), ord(&#39;9&#39;) + 1) ]</span>
+    <span class="n">puncts</span> <span class="o">=</span> <span class="s2">&quot;-,.?!:;&quot;</span>
+    <span class="n">noneng</span> <span class="o">=</span> <span class="n">uniques</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">alphas</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">puncts</span><span class="p">)</span>
     <span class="nb">print</span> <span class="p">(</span><span class="n">noneng</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">noneng</span><span class="p">:</span>
         <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
@@ -13464,7 +13436,11 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
     <span class="c1"># shorten any extra dead space created above</span>
     <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;  &#39;</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
     
-<span class="n">clean_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">text</span>
+    
+<span class="n">text</span> <span class="o">=</span> <span class="n">clean_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">get_uniques</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="k">pass</span>
 </pre></div>
 
 </div>
@@ -13475,12 +13451,11 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;y&#39;, &#39;%&#39;, &#39;g&#39;, &#39;;&#39;, &#39;é&#39;, &#39;)&#39;, &#39;2&#39;, &#39;a&#39;, &#39;:&#39;, &#39;(&#39;, &#39;?&#39;, &#39;0&#39;, &#34;&#39;&#34;, &#39;r&#39;, &#39;x&#39;, &#39;j&#39;, &#39;h&#39;, &#39;1&#39;, &#39;-&#39;, &#39;8&#39;, &#39;t&#39;, &#39;k&#39;, &#39;5&#39;, &#39;o&#39;, &#39;w&#39;, &#39;d&#39;, &#39;b&#39;, &#39;!&#39;, &#39;6&#39;, &#39;z&#39;, &#39; &#39;, &#39;u&#39;, &#39;3&#39;, &#39;m&#39;, &#39;&amp;&#39;, &#39;n&#39;, &#39;à&#39;, &#39;f&#39;, &#39;â&#39;, &#39;c&#39;, &#39;è&#39;, &#39;4&#39;, &#39;$&#39;, &#39;&#34;&#39;, &#39;9&#39;, &#39;,&#39;, &#39;i&#39;, &#39;@&#39;, &#39;e&#39;, &#39;/&#39;, &#39;l&#39;, &#39;.&#39;, &#39;s&#39;, &#39;q&#39;, &#39;7&#39;, &#39;*&#39;, &#39;v&#39;, &#39;p&#39;}
-{&#39;à&#39;, &#39;é&#39;, &#39;@&#39;, &#39;*&#39;, &#39;è&#39;, &#39;â&#39;}
+<pre>{&#39;â&#39;, &#39;p&#39;, &#39;o&#39;, &#39;2&#39;, &#39;&#34;&#39;, &#39;d&#39;, &#39;i&#39;, &#39;f&#39;, &#39;g&#39;, &#39;5&#39;, &#39;6&#39;, &#39;(&#39;, &#39;r&#39;, &#39;@&#39;, &#39;/&#39;, &#39;c&#39;, &#39;k&#39;, &#39;s&#39;, &#39;)&#39;, &#39;x&#39;, &#39;9&#39;, &#39;$&#39;, &#39;-&#39;, &#39;,&#39;, &#39;j&#39;, &#39;%&#39;, &#39;l&#39;, &#39;m&#39;, &#39;&amp;&#39;, &#39;v&#39;, &#39;a&#39;, &#39;!&#39;, &#39;y&#39;, &#39;3&#39;, &#39;4&#39;, &#39;7&#39;, &#39; &#39;, &#39;?&#39;, &#39;w&#39;, &#39;h&#39;, &#34;&#39;&#34;, &#39;*&#39;, &#39;0&#39;, &#39;t&#39;, &#39;b&#39;, &#39;:&#39;, &#39;n&#39;, &#39;à&#39;, &#39;;&#39;, &#39;1&#39;, &#39;è&#39;, &#39;.&#39;, &#39;q&#39;, &#39;8&#39;, &#39;u&#39;, &#39;z&#39;, &#39;é&#39;, &#39;e&#39;} 58
+{&#39;â&#39;, &#39;2&#39;, &#39;&#34;&#39;, &#39;6&#39;, &#39;@&#39;, &#39;/&#39;, &#39;9&#39;, &#39;$&#39;, &#39;&amp;&#39;, &#39;4&#39;, &#39;7&#39;, &#34;&#39;&#34;, &#39;*&#39;, &#39;0&#39;, &#39;è&#39;, &#39;8&#39;, &#39;%&#39;, &#39;5&#39;, &#39;(&#39;, &#39;)&#39;, &#39;3&#39;, &#39; &#39;, &#39;1&#39;, &#39;à&#39;, &#39;é&#39;}
+{&#39;p&#39;, &#39;o&#39;, &#39;d&#39;, &#39;i&#39;, &#39;f&#39;, &#39;g&#39;, &#39;r&#39;, &#39;c&#39;, &#39;k&#39;, &#39;s&#39;, &#39;x&#39;, &#39;-&#39;, &#39;,&#39;, &#39;j&#39;, &#39;l&#39;, &#39;m&#39;, &#39;v&#39;, &#39;a&#39;, &#39;!&#39;, &#39;y&#39;, &#39; &#39;, &#39;?&#39;, &#39;w&#39;, &#39;h&#39;, &#39;t&#39;, &#39;b&#39;, &#39;:&#39;, &#39;n&#39;, &#39;;&#39;, &#39;.&#39;, &#39;q&#39;, &#39;u&#39;, &#39;z&#39;, &#39;e&#39;} 34
 </pre>
 </div>
 </div>
@@ -13501,7 +13476,7 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### print out the first 2000 characters of the raw text to get a sense of what we need to throw out</span>
@@ -13516,13 +13491,11 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[32]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[43]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#34;is eyes she eclipses and predominates the whole of her sex. it was not that he felt any emotion akin to love for irene adler. all emotions, and that one particularly, were abhorrent to his cold, precise but admirably balanced mind. he was, i take it, the most perfect reasoning and observing machine that the world has seen, but as a lover he would have placed himself in a false position. he never spoke of the softer passions, save with a gibe and a sneer. they were admirable things for the observer--excellent for drawing the veil from men&#39;s motives and actions. but for the trained reasoner to admit such intrusions into his own delicate and finely adjusted temperament was to introduce a distracting factor which might throw a doubt upon all his mental results. grit in a sensitive instrument, or a crack in one of his own high-power lenses, would not be more disturbing than a strong emotion in a nature such as his. and yet there was but one woman to him, and that woman was the late irene adler, of dubious and questionable memory.  i had seen little of holmes lately. my marriage had drifted us away from each other. my own complete happiness, and the home-centred interests which rise up around the man who first finds himself master of his own establishment, were sufficient to absorb all my attention, while holmes, who loathed every form of society with his whole bohemian soul, remained in our lodgings in baker street, buried among his old books, and alternating from week to week between cocaine and ambition, the drowsiness of the drug, and the fierce energy of his own keen nature. he was still, as ever, deeply attracted by the study of crime, and occupied his immense faculties and extraordinary powers of observation in following out those clues, and clearing up those mysteries which had been abandoned as hopeless by the official police. from time to time i heard some vague account of his doings: of his summons to odessa in the case of the trepoff murder, of his clearing up&#34;</pre>
+<pre>&#39;is eyes she eclipses and predominates the whole of her sex. it was not that he felt any emotion akin to love for irene adler. all emotions, and that one particularly, were abhorrent to his cold, precise but admirably balanced mind. he was, i take it, the most perfect reasoning and observing machine that the world has seen, but as a lover he would have placed himself in a false position. he never spoke of the softer passions, save with a gibe and a sneer. they were admirable things for the observer--excellent for drawing the veil from men s motives and actions. but for the trained reasoner to admit such intrusions into his own delicate and finely adjusted temperament was to introduce a distracting factor which might throw a doubt upon all his mental results. grit in a sensitive instrument, or a crack in one of his own high-power lenses, would not be more disturbing than a strong emotion in a nature such as his. and yet there was but one woman to him, and that woman was the late irene adler, of dubious and questionable memory. i had seen little of holmes lately. my marriage had drifted us away from each other. my own complete happiness, and the home-centred interests which rise up around the man who first finds himself master of his own establishment, were sufficient to absorb all my attention, while holmes, who loathed every form of society with his whole bohemian soul, remained in our lodgings in baker street, buried among his old books, and alternating from week to week between cocaine and ambition, the drowsiness of the drug, and the fierce energy of his own keen nature. he was still, as ever, deeply attracted by the study of crime, and occupied his immense faculties and extraordinary powers of observation in following out those clues, and clearing up those mysteries which had been abandoned as hopeless by the official police. from time to time i heard some vague account of his doings: of his summons to odessa in the case of the trepoff murder, of his clearing up &#39;</pre>
 </div>
 
 </div>
@@ -13543,7 +13516,7 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># count the number of unique characters in the text</span>
@@ -13562,12 +13535,10 @@ mBbIGgEaY4wxLZAlAMYYY0wLZAmAMcYY0wJZAmCMMca0QJYAGGOMMS2QJQDGGGNMC/T/ASjpMv1+
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>this corpus has 580562 total number of characters
-this corpus has 58 unique characters
+<pre>this corpus has 573887 total number of characters
+this corpus has 34 unique characters
 </pre>
 </div>
 </div>
@@ -13583,7 +13554,7 @@ this corpus has 58 unique characters
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="2.3--Cutting-data-into-input/output-pairs">2.3  Cutting data into input/output pairs<a class="anchor-link" href="#2.3--Cutting-data-into-input/output-pairs">&#182;</a></h2><p>Now that we have our text all cleaned up, how can we use it to train a model to generate sentences automatically?  First we need to train a machine learning model - and in order to do that we need a set of input/output pairs for a model to train on.  How can we create a set of input/output pairs from our text to train on?</p>
 <p>Remember in part 1 of this notebook how we used a sliding window to extract input/output pairs from a time series?  We do the same thing here!  We slide a window of length $T$ along our giant text corpus - everything in the window becomes one input while the character following becomes its corresponding output.  This process of extracting input/output pairs is illustrated in the gif below on a small example text using a window size of T = 5.</p>
-<p><img src="images/text_windowing_training.gif" width=400 height=400/></p>
+<p>&lt;img src="images/text_windowing_training.gif" width=400 height=400/&gt;</p>
 <p>Notice one aspect of the sliding window in this gif that does not mirror the analaogous gif for time series shown in part 1 of the notebook - we do not need to slide the window along one character at a time but can move by a fixed step size $M$ greater than 1 (in the gif indeed $M = 1$).  This is done with large input texts (like ours which has over 500,000 characters!) when sliding the window along one character at a time we would create far too many input/output pairs to be able to reasonably compute with.</p>
 <p>More formally lets denote our text corpus - which is one long string of characters - as follows</p>
 $$s_{0},s_{1},s_{2},...,s_{P}$$<p>where $P$ is the length of the text (again for our text $P \approx 500,000!$).  Sliding a window of size T = 5 with a step length of M = 1 (these are the parameters shown in the gif above) over this sequence produces the following list of input/output pairs</p>
@@ -13613,7 +13584,7 @@ $$\begin{array}{c|c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: fill out the function below that transforms the input text and window-size into a set of input/output pairs for use with our RNN model</span>
@@ -13646,7 +13617,7 @@ $$\begin{array}{c|c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># run your text window-ing function </span>
@@ -13672,7 +13643,7 @@ $$\begin{array}{c|c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># print out a few of the input/output pairs to verify that we&#39;ve made the right kind of stuff to learn from</span>
@@ -13691,14 +13662,12 @@ $$\begin{array}{c|c}
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>input = e eclipses and predominates the whole of her sex. it was not that he felt any emotion akin to love f
 output = o
 --------------
-input = er--excellent for drawing the veil from men&#39;s motives and actions. but for the trained reasoner to a
+input = er--excellent for drawing the veil from men s motives and actions. but for the trained reasoner to a
 output = d
 </pre>
 </div>
@@ -13731,7 +13700,7 @@ output = d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># print out the number of unique characters in the dataset</span>
@@ -13749,13 +13718,11 @@ output = d
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>this corpus has 58 unique characters
+<pre>this corpus has 34 unique characters
 and these characters are 
-[&#39; &#39;, &#39;!&#39;, &#39;&#34;&#39;, &#39;$&#39;, &#39;%&#39;, &#39;&amp;&#39;, &#34;&#39;&#34;, &#39;(&#39;, &#39;)&#39;, &#39;*&#39;, &#39;,&#39;, &#39;-&#39;, &#39;.&#39;, &#39;/&#39;, &#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;, &#39;:&#39;, &#39;;&#39;, &#39;?&#39;, &#39;@&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;, &#39;i&#39;, &#39;j&#39;, &#39;k&#39;, &#39;l&#39;, &#39;m&#39;, &#39;n&#39;, &#39;o&#39;, &#39;p&#39;, &#39;q&#39;, &#39;r&#39;, &#39;s&#39;, &#39;t&#39;, &#39;u&#39;, &#39;v&#39;, &#39;w&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;, &#39;à&#39;, &#39;â&#39;, &#39;è&#39;, &#39;é&#39;]
+[&#39; &#39;, &#39;!&#39;, &#39;,&#39;, &#39;-&#39;, &#39;.&#39;, &#39;:&#39;, &#39;;&#39;, &#39;?&#39;, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;, &#39;i&#39;, &#39;j&#39;, &#39;k&#39;, &#39;l&#39;, &#39;m&#39;, &#39;n&#39;, &#39;o&#39;, &#39;p&#39;, &#39;q&#39;, &#39;r&#39;, &#39;s&#39;, &#39;t&#39;, &#39;u&#39;, &#39;v&#39;, &#39;w&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;]
 </pre>
 </div>
 </div>
@@ -13819,7 +13786,7 @@ $$a\longleftarrow\left[\begin{array}{c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># this dictionary is a function mapping each unique character to a unique integer</span>
@@ -13846,7 +13813,7 @@ $$a\longleftarrow\left[\begin{array}{c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># transform character-based input/output into equivalent numerical versions</span>
@@ -13888,7 +13855,7 @@ $$a\longleftarrow\left[\begin{array}{c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use your function</span>
@@ -13923,7 +13890,7 @@ $$a\longleftarrow\left[\begin{array}{c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### necessary functions from the keras library</span>
@@ -13941,7 +13908,7 @@ $$a\longleftarrow\left[\begin{array}{c}
 <span class="p">])</span>
 
 <span class="c1"># initialize optimizer</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">RMSprop</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1e-08</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">RMSprop</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mi">1</span><span class="n">e</span><span class="o">-</span><span class="mi">08</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
 
 <span class="c1"># compile model --&gt; make sure initialized optimizer and callbacks - as defined above - are used</span>
 <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">)</span>
@@ -13964,7 +13931,7 @@ $$a\longleftarrow\left[\begin{array}{c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># a small subset of our input/output pairs</span>
@@ -13989,7 +13956,7 @@ $$a\longleftarrow\left[\begin{array}{c}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># train the model</span>
@@ -14007,90 +13974,88 @@ $$a\longleftarrow\left[\begin{array}{c}
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/40
-10000/10000 [==============================] - 4s - loss: 3.1732     
+10000/10000 [==============================] - 4s - loss: 3.0414     
 Epoch 2/40
-10000/10000 [==============================] - 4s - loss: 2.9508     
+10000/10000 [==============================] - 4s - loss: 2.8937     
 Epoch 3/40
-10000/10000 [==============================] - 4s - loss: 2.9305     
+10000/10000 [==============================] - 4s - loss: 2.8655     
 Epoch 4/40
-10000/10000 [==============================] - 4s - loss: 2.9023     
+10000/10000 [==============================] - 4s - loss: 2.8305     
 Epoch 5/40
-10000/10000 [==============================] - 4s - loss: 2.8670     
+10000/10000 [==============================] - 4s - loss: 2.7624     
 Epoch 6/40
-10000/10000 [==============================] - 4s - loss: 2.8121     
+10000/10000 [==============================] - 4s - loss: 2.6846     
 Epoch 7/40
-10000/10000 [==============================] - 4s - loss: 2.7601     
+10000/10000 [==============================] - 4s - loss: 2.6159     
 Epoch 8/40
-10000/10000 [==============================] - 4s - loss: 2.7059     
+10000/10000 [==============================] - 4s - loss: 2.5550     
 Epoch 9/40
-10000/10000 [==============================] - 4s - loss: 2.6541     
+10000/10000 [==============================] - 4s - loss: 2.4946     
 Epoch 10/40
-10000/10000 [==============================] - 4s - loss: 2.6065     
+10000/10000 [==============================] - 4s - loss: 2.4451     
 Epoch 11/40
-10000/10000 [==============================] - 4s - loss: 2.5604     
+10000/10000 [==============================] - 4s - loss: 2.4082     
 Epoch 12/40
-10000/10000 [==============================] - 4s - loss: 2.5215     
+10000/10000 [==============================] - 4s - loss: 2.3714     
 Epoch 13/40
-10000/10000 [==============================] - 4s - loss: 2.4887     
+10000/10000 [==============================] - 4s - loss: 2.3421     
 Epoch 14/40
-10000/10000 [==============================] - 4s - loss: 2.4584     
+10000/10000 [==============================] - 4s - loss: 2.3103     
 Epoch 15/40
-10000/10000 [==============================] - 4s - loss: 2.4271     
+10000/10000 [==============================] - 4s - loss: 2.2877     
 Epoch 16/40
-10000/10000 [==============================] - 4s - loss: 2.4012     
+10000/10000 [==============================] - 4s - loss: 2.2611     
 Epoch 17/40
-10000/10000 [==============================] - 4s - loss: 2.3836     
+10000/10000 [==============================] - 4s - loss: 2.2400     
 Epoch 18/40
-10000/10000 [==============================] - 4s - loss: 2.3529     
+10000/10000 [==============================] - 4s - loss: 2.2233     
 Epoch 19/40
-10000/10000 [==============================] - 4s - loss: 2.3341     
+10000/10000 [==============================] - 4s - loss: 2.2016     
 Epoch 20/40
-10000/10000 [==============================] - 4s - loss: 2.3122     
+10000/10000 [==============================] - 4s - loss: 2.1807     
 Epoch 21/40
-10000/10000 [==============================] - 4s - loss: 2.2968     
+10000/10000 [==============================] - 4s - loss: 2.1645     
 Epoch 22/40
-10000/10000 [==============================] - 4s - loss: 2.2768     
+10000/10000 [==============================] - 4s - loss: 2.1475     
 Epoch 23/40
-10000/10000 [==============================] - 4s - loss: 2.2625     
+10000/10000 [==============================] - 4s - loss: 2.1259     
 Epoch 24/40
-10000/10000 [==============================] - 4s - loss: 2.2417     
+10000/10000 [==============================] - 4s - loss: 2.1090     
 Epoch 25/40
-10000/10000 [==============================] - 4s - loss: 2.2283     
+10000/10000 [==============================] - 4s - loss: 2.0969     
 Epoch 26/40
-10000/10000 [==============================] - 4s - loss: 2.2162     
+10000/10000 [==============================] - 4s - loss: 2.0729     
 Epoch 27/40
-10000/10000 [==============================] - 4s - loss: 2.1945     
+10000/10000 [==============================] - 4s - loss: 2.0537     
 Epoch 28/40
-10000/10000 [==============================] - 4s - loss: 2.1833     
+10000/10000 [==============================] - 4s - loss: 2.0374     
 Epoch 29/40
-10000/10000 [==============================] - 4s - loss: 2.1651     
+10000/10000 [==============================] - 4s - loss: 2.0174     
 Epoch 30/40
-10000/10000 [==============================] - 4s - loss: 2.1501     
+10000/10000 [==============================] - 4s - loss: 2.0013     
 Epoch 31/40
-10000/10000 [==============================] - 4s - loss: 2.1380     
+10000/10000 [==============================] - 4s - loss: 1.9813     
 Epoch 32/40
-10000/10000 [==============================] - 4s - loss: 2.1191     
+10000/10000 [==============================] - 4s - loss: 1.9591     
 Epoch 33/40
-10000/10000 [==============================] - 4s - loss: 2.1074     
+10000/10000 [==============================] - 4s - loss: 1.9394     
 Epoch 34/40
-10000/10000 [==============================] - 4s - loss: 2.0913     
+10000/10000 [==============================] - 4s - loss: 1.9208     
 Epoch 35/40
-10000/10000 [==============================] - 4s - loss: 2.0772     
+10000/10000 [==============================] - 4s - loss: 1.8958     
 Epoch 36/40
-10000/10000 [==============================] - 4s - loss: 2.0573     
+10000/10000 [==============================] - 4s - loss: 1.8777     
 Epoch 37/40
-10000/10000 [==============================] - 4s - loss: 2.0484     
+10000/10000 [==============================] - 4s - loss: 1.8533     
 Epoch 38/40
-10000/10000 [==============================] - 4s - loss: 2.0360     
+10000/10000 [==============================] - 4s - loss: 1.8300     
 Epoch 39/40
-10000/10000 [==============================] - 4s - loss: 2.0188     
+10000/10000 [==============================] - 4s - loss: 1.8106     
 Epoch 40/40
-10000/10000 [==============================] - 4s - loss: 2.0039     
+10000/10000 [==============================] - 4s - loss: 1.7791     
 </pre>
 </div>
 </div>
@@ -14113,7 +14078,7 @@ Epoch 40/40
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># function that uses trained model to predict a desired number of future characters</span>
@@ -14158,7 +14123,7 @@ Epoch 40/40
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: choose an input sequence and use the prediction function in the previous Python cell to predict 100 characters following it</span>
@@ -14192,16 +14157,14 @@ Epoch 40/40
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>------------------
 input chars = 
 eyes she eclipses and predominates the whole of her sex. it was not that he felt any emotion akin to&#34;
 
 predicted chars = 
- the sore the mas the was the was the was the was the was the was the was the was the was the was th&#34;
+ meand and and and and and and and and and and and and and and and and and and and and and and and a&#34;
 
 ------------------
 input chars = 
@@ -14212,10 +14175,10 @@ nd and and and and and and and and and and and and and and and and and and and a
 
 ------------------
 input chars = 
-ler, of dubious and questionable memory.  i had seen little of holmes lately. my marriage had drifte&#34;
+ler, of dubious and questionable memory. i had seen little of holmes lately. my marriage had drifted&#34;
 
 predicted chars = 
- the mas and and and and and and and and and and and and and and and and and and and and and and and&#34;
+ and ard and and and and and and and and and and and and and and and and and and and and and and and&#34;
 
 </pre>
 </div>
@@ -14239,7 +14202,7 @@ predicted chars =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### A simple way to write output to file</span>
@@ -14262,9 +14225,7 @@ predicted chars =
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt output_prompt">Out[46]:</div>
-
+<div class="output_area"><div class="prompt output_prompt">Out[57]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -14300,7 +14261,7 @@ predicted chars =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># a small subset of our input/output pairs</span>
@@ -14322,80 +14283,68 @@ predicted chars =
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/home/aind2/anaconda3/envs/aind2/lib/python3.6/site-packages/keras/models.py:837: UserWarning: The `nb_epoch` argument in `fit` has been renamed `epochs`.
-  warnings.warn(&#39;The `nb_epoch` argument in `fit` &#39;
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Epoch 1/30
-100000/100000 [==============================] - 43s - loss: 2.0974    
+100000/100000 [==============================] - 43s - loss: 2.0372    
 Epoch 2/30
-100000/100000 [==============================] - 43s - loss: 2.0183    
+100000/100000 [==============================] - 43s - loss: 1.9445    
 Epoch 3/30
-100000/100000 [==============================] - 43s - loss: 1.9583    
+100000/100000 [==============================] - 43s - loss: 1.8781    
 Epoch 4/30
-100000/100000 [==============================] - 43s - loss: 1.9055    
+100000/100000 [==============================] - 43s - loss: 1.8215    
 Epoch 5/30
-100000/100000 [==============================] - 43s - loss: 1.8610    
+100000/100000 [==============================] - 43s - loss: 1.7727    
 Epoch 6/30
-100000/100000 [==============================] - 43s - loss: 1.8205    
+100000/100000 [==============================] - 43s - loss: 1.7283    
 Epoch 7/30
-100000/100000 [==============================] - 43s - loss: 1.7839    
+100000/100000 [==============================] - 43s - loss: 1.6883    
 Epoch 8/30
-100000/100000 [==============================] - 43s - loss: 1.7498    
+100000/100000 [==============================] - 43s - loss: 1.6503    
 Epoch 9/30
-100000/100000 [==============================] - 43s - loss: 1.7178    
+100000/100000 [==============================] - 43s - loss: 1.6151    
 Epoch 10/30
-100000/100000 [==============================] - 43s - loss: 1.6872    
+100000/100000 [==============================] - 43s - loss: 1.5809    
 Epoch 11/30
-100000/100000 [==============================] - 43s - loss: 1.6581    
+100000/100000 [==============================] - 43s - loss: 1.5488    
 Epoch 12/30
-100000/100000 [==============================] - 43s - loss: 1.6306    
+100000/100000 [==============================] - 43s - loss: 1.5168    
 Epoch 13/30
-100000/100000 [==============================] - 43s - loss: 1.6044    
+100000/100000 [==============================] - 43s - loss: 1.4866    
 Epoch 14/30
-100000/100000 [==============================] - 43s - loss: 1.5785    
+100000/100000 [==============================] - 43s - loss: 1.4561    
 Epoch 15/30
-100000/100000 [==============================] - 43s - loss: 1.5542    
+100000/100000 [==============================] - 43s - loss: 1.4269    
 Epoch 16/30
-100000/100000 [==============================] - 44s - loss: 1.5297    
+100000/100000 [==============================] - 43s - loss: 1.3977    
 Epoch 17/30
-100000/100000 [==============================] - 44s - loss: 1.5066    
+100000/100000 [==============================] - 43s - loss: 1.3682    
 Epoch 18/30
-100000/100000 [==============================] - 43s - loss: 1.4834    
+100000/100000 [==============================] - 43s - loss: 1.3395    
 Epoch 19/30
-100000/100000 [==============================] - 43s - loss: 1.4610    
+100000/100000 [==============================] - 43s - loss: 1.3111    
 Epoch 20/30
-100000/100000 [==============================] - 43s - loss: 1.4387    
+100000/100000 [==============================] - 43s - loss: 1.2810    
 Epoch 21/30
-100000/100000 [==============================] - 43s - loss: 1.4163    
+100000/100000 [==============================] - 43s - loss: 1.2527    
 Epoch 22/30
-100000/100000 [==============================] - 43s - loss: 1.3940    
+100000/100000 [==============================] - 43s - loss: 1.2245    
 Epoch 23/30
-100000/100000 [==============================] - 43s - loss: 1.3728    
+100000/100000 [==============================] - 43s - loss: 1.1948    
 Epoch 24/30
-100000/100000 [==============================] - 43s - loss: 1.3521    
+100000/100000 [==============================] - 43s - loss: 1.1675    
 Epoch 25/30
-100000/100000 [==============================] - 43s - loss: 1.3300    
+100000/100000 [==============================] - 43s - loss: 1.1386    
 Epoch 26/30
-100000/100000 [==============================] - 43s - loss: 1.3088    
+100000/100000 [==============================] - 43s - loss: 1.1109    
 Epoch 27/30
-100000/100000 [==============================] - 43s - loss: 1.2873    
+100000/100000 [==============================] - 43s - loss: 1.0834    
 Epoch 28/30
-100000/100000 [==============================] - 43s - loss: 1.2659    
+100000/100000 [==============================] - 43s - loss: 1.0559    
 Epoch 29/30
-100000/100000 [==============================] - 43s - loss: 1.2443    
+100000/100000 [==============================] - 43s - loss: 1.0306    
 Epoch 30/30
-100000/100000 [==============================] - 43s - loss: 1.2227    
+100000/100000 [==============================] - 43s - loss: 1.0045    
 </pre>
 </div>
 </div>
@@ -14406,7 +14355,7 @@ Epoch 30/30
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: choose an input sequence and use the prediction function in the previous Python cell to predict 100 characters following it</span>
@@ -14449,9 +14398,7 @@ Epoch 30/30
 <div class="output">
 
 
-<div class="output_area">
-<div class="prompt"></div>
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>-------------------
 
@@ -14459,7 +14406,7 @@ input chars =
 s eyes she eclipses and predominates the whole of her sex. it was not that he felt any emotion akin &#34;
 
 predicted chars = 
-the prese of the conserions was to and the think which he sat the some of the morning of the connine&#34;
+the letter down to the nouse at the corvine of the other of encecestant as i was a rearly to the rec&#34;
 
 -------------------
 
@@ -14467,31 +14414,31 @@ input chars =
  and predominates the whole of her sex. it was not that he felt any emotion akin to love for irene a&#34;
 
 predicted chars = 
-nd was seen and looked and lead from the lood of her leaded and a plitter of the conerch of his hand&#34;
+dd as i small hand on the look at of the look at as a good of enerow restarred holmes. it was a some&#34;
 
 -------------------
 
 input chars = 
-r was not effusive. it seldom was; but he was glad, i think, to see me. with hardly a word spoken, b&#34;
+not effusive. it seldom was; but he was glad, i think, to see me. with hardly a word spoken, but wit&#34;
 
 predicted chars = 
-ut i have not been here and down to the potsing that there as a some for the may stough to hear to t&#34;
+h a grown returning his statted. at then the was which was in the out me should gately arr the stree&#34;
 
 -------------------
 
 input chars = 
-e is incorrigible, and my wife has given her notice, but there, again, i fail to see how you work it&#34;
+d my wife has given her notice, but there, again, i fail to see how you work it out.  he chuckled to&#34;
 
 predicted chars = 
- was to be a string of state of the prise of the cound of the cound of the corner was a smear for in&#34;
+ the room.  well, and i have not mas been to me.  but is is allour that i was not to the complety an&#34;
 
 -------------------
 
 input chars = 
-dfrey norton was evidently an important factor in the matter. he was a lawyer. that sounded ominous.&#34;
+as less likely. on the issue of this question depended whether i should continue my work at briony l&#34;
 
 predicted chars = 
- he was a rear from a small spon in a bottle difally beck into a conter in the street of her was a s&#34;
+ade.  and herr of have you tell that it was a some leady to do boning the little of the room and a g&#34;
 
 </pre>
 </div>
@@ -14517,8 +14464,4 @@ predicted chars =
     </div>
   </div>
 </body>
-
- 
-
-
 </html>
